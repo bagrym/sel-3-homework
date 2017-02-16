@@ -32,7 +32,7 @@ public class LitecardStickersCheckAtMain {
         List<WebElement> productList = driver.findElements(By.cssSelector("li.product"));
         for (WebElement product: productList
              ) {
-            assert(product.findElements(By.cssSelector("div[class^=sticker]")).size() == 1);
+            assert(product.findElements(By.cssSelector("div.sticker")).size() == 1);
         }
     }
 
