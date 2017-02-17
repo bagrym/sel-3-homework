@@ -43,8 +43,9 @@ public class LitecardCountriesSorting {
         }
 
         //б.Search for country rows with zones number > 0 and check zones sorting at new page
-        for (int j = 0; j < driver.findElements(By.cssSelector("tr.row")).size(); j++) {
-            List<WebElement> countryRows = driver.findElements(By.cssSelector("tr.row"));
+        List<WebElement> countryRows = driver.findElements(By.cssSelector("tr.row"));
+        for (int j = 0; j < countryRows.size(); j++) {
+            countryRows = driver.findElements(By.cssSelector("tr.row"));
             WebElement zonesCount = countryRows.get(j).findElements(By.cssSelector("td")).get(5);
 
             if (zonesCount.getAttribute("textContent").compareTo("0") != 0) {
